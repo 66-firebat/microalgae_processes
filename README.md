@@ -1,3 +1,5 @@
+# Proposal Draft
+
 | Step | What Happens | Why It Matters |
 |---|---|---|
 | **1. Collect data** | Gather input-output time-series from the real reactor or a validated simulation — states (concentration, temperature) and inputs (feed rate, coolant flow), sampled over time. | The model can only be as good as the data. Needs enough variation (excitation) in the inputs for the system to reveal its true nonlinear behavior — steady-state data alone won't work. |
