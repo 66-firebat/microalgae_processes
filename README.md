@@ -20,10 +20,10 @@ Most physical systems are governed by an equation of the form `ẋ = f(x, u)`, w
 3. Run a sparse regression that fits `ẋ` against that library while forcing most coefficients to exactly zero — fit, threshold out small coefficients, refit, repeat until stable.
 4. Whatever terms survive with nonzero coefficients *are* the discovered model.
 
-### Why sparsity is the point
+### The Utility of Sparsity
 A dense fit (keeping every library term) would match training data but wouldn't generalize and wouldn't mean anything — just a curve fit dressed up as a model. Forcing sparsity turns the output into something closer to an actual physical law: a handful of interpretable terms doing real work, rather than a black box.
 
-### Why it's the right fit for a digital twin
+### Contextualization to Digital Twins
 - Data-driven (no need to already know the mechanism) but interpretable (unlike a neural net, you can read what it found).
 - Output is a small set of coefficients, not millions of weights — cheap to re-fit or update online, which is exactly what a self-updating twin needs.
 - Main limitation: it can only discover what's in your candidate library. If you don't include an Arrhenius or Monod/Droop term as a candidate, SINDy can't find that kinetic form — it'll approximate it clumsily with whatever generic terms you did supply. This is why seeding
